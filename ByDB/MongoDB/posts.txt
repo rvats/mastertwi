@@ -1,0 +1,6 @@
+db.posts.insert({
+	title: 'Mrs. South Asia International 2020 - Arpita Vats',
+	body: 'Kota's Daughter and Bhopal's Daughter in Law won the presti',
+	category: '',
+	likes: 111,
+	tags: []
