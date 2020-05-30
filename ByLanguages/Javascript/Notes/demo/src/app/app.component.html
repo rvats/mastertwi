@@ -1,0 +1,123 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<div class="container">
+
+  <router-outlet></router-outlet>
+
+</div>
+
+
+
+
+
+
+<!--<h1 [ngStyle]="{color: status ? 'green' : 'red'}">{{firstName}}</h1>-->
+
+
+<!--<br>-->
+
+<!--<h1 [ngClass]="{isActive: status === ''}">{{lastName}}</h1>-->
+
+
+
+
+
+
+
+<!--<ul>-->
+
+  <!--<li *ngFor="let post of posts; let i = index">{{i + 1}} {{post.title}}</li>-->
+
+<!--</ul>-->
+
+
+
+
+
+
+
+
+<!--<h1 *ngIf="status; else notActive">{{ firstName }}</h1>-->
+
+<!--<ng-template #notActive>-->
+
+  <!--<p>Not Active</p>-->
+
+
+<!--</ng-template>-->
+
+
+
+
+
+<!--<input [(ngModel)]="lastName" type="text">-->
+
+<!--<br>-->
+
+<!--{{ lastName }}-->
+
+
+
+<!--<button (click)="greetPerson()">CLICK</button>-->
+
+<!--<br>-->
+
+<!--<div (mouseover)="mousingOver()" class="box">-->
+<!--</div>-->
+
+<!--<br>-->
+
+
+<!--<input (keydown)="keyDowning()" type="text">-->
+
+<!--<br>-->
+
+
+
+<!--<label for="status">Active</label>-->
+<!--<input type='radio' id="status" [checked]="status">-->
+
+
+
+
+<!--<h1>-->
+  <!--Welcome to {{ firstName }} {{ lastName }}!-->
+<!--</h1>-->
+
+<!--<br>-->
+
+
+<!--<hr>-->
+
+
+<!--<br>-->
+
+<!--{{ city ? city : 'No City'}}-->
+
+<!--<br>-->
+
+<!--{{ displayFirstName() }}-->
+
+<!--<br>-->
+
+
+
+
