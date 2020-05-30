@@ -1,0 +1,24 @@
+# downloading R may takes a few minutes (80Mo)
+try:
+    import urllib.request as urllib2  # Python 3
+except:
+    import urllib2  # Python 2
+
+# specify R binary and (md5, sha1) hash
+# R-3.4.3:
+r_url = "https://cran.r-project.org/bin/windows/base/R-3.4.3-win.exe"
+hashes=("0ff087acbae677d7255af19b0a9df27f","aabf0b671ae1dca741c3df9dee976a7d4b584f80")
+
+# specify target location
+r_installer = os.environ["WINPYDIR"]+"\\..\\tools\\"+os.path.basename(r_url)
+os.environ["r_installer"] = r_installer
+
+# Download
+g = urllib2.urlopen(r_url) 
+with io.open(r_installer, 'wb') as f:
+    f.write(g.read())
+g.close
+g = None
+
+#checking it's there
+!dir %r_installer%
