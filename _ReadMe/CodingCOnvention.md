@@ -23,7 +23,13 @@ Coding conventions serve the following purposes:
 The guidelines in this article are used by Microsoft to develop samples and documentation.  
   
 ## Naming Conventions  
-  
+
+### 1. Casing
+There are three casings generally accepted by C# standards:
+1. PascalCase: This is for class names, file names, namespace names, ALL method names, and public member names.
+2. camelCase: This is used for member names that are not publicly accessible.
+3. UPPER_CASE: You might also think of this as upper snake case. This is only used for constants.
+
 - In short examples that do not include [using directives](../../language-reference/keywords/using-directive.md), use namespace qualifications. If you know that a namespace is imported by default in a project, you do not have to fully qualify the names from that namespace. Qualified names can be broken after a dot (.) if they are too long for a single line, as shown in the following example.  
   
      [!code-csharp[csProgGuideCodingConventions#1](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#1)]  
