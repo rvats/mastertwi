@@ -30,6 +30,29 @@ There are three casings generally accepted by C# standards:
 2. camelCase: This is used for member names that are not publicly accessible.
 3. UPPER_CASE: You might also think of this as upper snake case. This is only used for constants.
 
+There are some exceptions that exist in the world, and for good reasons.
+
+Names like “Pascal_snake_case” or “snake_case” are sometimes used in unit testing. A descriptive method name such as Should_return_2_when_adding_1_and_1 is much easier to read. That’s the reason for snake casing in unit tests.
+
+Event handlers (a type of method) often include an underscore to separate the target from the action. A classic example is Page_Load in ASP.NET. But this is not Pascal_snake_case. For example, in InputControl_Init, the InputControl is the target and Init is the event.
+
+#### Cardinal Casing Sins of C#
+The following casing conventions from other languages will land you in C# hell…
+
+Hungarian Notation
+Prepending a type identifier to the name is a no-no!
+
+Hungarian notation invites two problems in C#. For one, the name is misleading when the type changes. Another problem is readability. C# often uses custom types and interfaces. Names such as iDictNames and mpLateFeeMessageProcessor litter the code with extra unintelligibility (what is an “mp” anyway?).
+
+New developers will have to learn the inside naming conventions, which slows down development and introduces operational risk. The IDE gives you plenty of information about the type if and when you need it.
+
+Mixed Conventions
+Mixed naming conventions make the program less readable. Be consistent and pay attention to readability. Sure, we’re programming a computer, but the code is really for humans. Computers would be perfectly fine with an entire program of 0s and 1s.
+
+Keep your reader in mind when writing software and use the same casing rules throughout!
+
+
+
 - In short examples that do not include [using directives](../../language-reference/keywords/using-directive.md), use namespace qualifications. If you know that a namespace is imported by default in a project, you do not have to fully qualify the names from that namespace. Qualified names can be broken after a dot (.) if they are too long for a single line, as shown in the following example.  
   
      [!code-csharp[csProgGuideCodingConventions#1](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#1)]  
@@ -199,7 +222,7 @@ Call [static](../../language-reference/keywords/static.md) members by using the 
   
 - Use multiple `from` clauses instead of a [join](../../language-reference/keywords/join-clause.md) clause to access inner collections. For example, a collection of `Student` objects might each contain a collection of test scores. When the following query is executed, it returns each score that is over 90, along with the last name of the student who received the score.  
   
-     [!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
+[!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
   
 ## Security  
 
@@ -209,4 +232,7 @@ Follow the guidelines in [Secure Coding Guidelines](../../../standard/security/s
 
 - [Visual Basic Coding Conventions](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)
 - [Secure Coding Guidelines](../../../standard/security/secure-coding-guidelines.md)
- 
+
+# References
+- [Dotnet Docs](https://github.com/dotnet/docs/blob/master/docs/csharp/programming-guide/inside-a-program/coding-conventions.md)
+- [The 9 Coding Standards C# Developers Need to Get Started](https://blog.submain.com/coding-standards-c-developers-need/)
