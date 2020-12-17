@@ -74,3 +74,5 @@ ipython_config.py
 
 # End
 /.vs
+/ByLanguages/CSharp/.vs/Algorithms
+/ByLanguages/CSharp/RestAPIDemoConsoleApp/.vs/RestAPIDemoConsoleApp/v16
