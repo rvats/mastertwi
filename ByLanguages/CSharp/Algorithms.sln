@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSOperations", "DSOperations\DSOperations.csproj", "{79A9C09A-0D2F-42A7-B053-D54FCCB6D507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPIDemoConsoleApp", "RestAPIDemoConsoleApp\RestAPIDemoConsoleApp.csproj", "{0DDEA40E-648F-4AC3-BC05-EB1C5AD2834B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestAPIDemoConsoleApp", "RestAPIDemoConsoleApp\RestAPIDemoConsoleApp.csproj", "{0DDEA40E-648F-4AC3-BC05-EB1C5AD2834B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TWI.System.Util", "TWI.System.Util\TWI.System.Util.csproj", "{69BF4180-24CC-4F05-AD06-819F861F17DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{0DDEA40E-648F-4AC3-BC05-EB1C5AD2834B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DDEA40E-648F-4AC3-BC05-EB1C5AD2834B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DDEA40E-648F-4AC3-BC05-EB1C5AD2834B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69BF4180-24CC-4F05-AD06-819F861F17DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69BF4180-24CC-4F05-AD06-819F861F17DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69BF4180-24CC-4F05-AD06-819F861F17DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69BF4180-24CC-4F05-AD06-819F861F17DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
