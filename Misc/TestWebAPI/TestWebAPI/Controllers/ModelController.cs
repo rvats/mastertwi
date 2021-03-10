@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using CsvHelper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -26,15 +29,15 @@ namespace TestWebAPI.Controllers
         [HttpGet]
         public IEnumerable<Model> Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new Model
+            var records = new List<Model>();
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var filePath = currentDirectory + "Model.csv";
+            using (var reader = new StreamReader(filePath))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                MemberID = index,
-                EnrollmentDate = DateTime.Now.AddDays(index),
-                FirstName = "FirstName",
-                LastName = "LastName"
-            })
-            .ToArray();
+                records = csv.GetRecords<Model>().ToList();
+            }
+            return records;
         }
     }
 }
