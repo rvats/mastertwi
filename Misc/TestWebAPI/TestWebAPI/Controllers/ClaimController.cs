@@ -26,7 +26,7 @@ namespace TestWebAPI.Controllers
         {
             var records = new List<Claim>();
             var currentDirectory = Directory.GetCurrentDirectory();
-            var filePath = currentDirectory + "Claim.csv";
+            var filePath = currentDirectory + "\\Data\\Claim.csv";
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {

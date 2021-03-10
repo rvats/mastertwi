@@ -31,7 +31,7 @@ namespace TestWebAPI.Controllers
         {
             var records = new List<Model>();
             var currentDirectory = Directory.GetCurrentDirectory();
-            var filePath = currentDirectory + "Model.csv";
+            var filePath = currentDirectory + "\\Data\\Model.csv";
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
