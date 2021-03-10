@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using CsvHelper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -22,7 +20,7 @@ namespace TestWebAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Object> Get()
+        public IEnumerable<ClaimsDetail> Get()
         {
             var currentDirectory = Directory.GetCurrentDirectory();
 
@@ -40,17 +38,18 @@ namespace TestWebAPI.Controllers
             {
                 claimRecords = csv.GetRecords<Claim>().ToList();
             }
-            var query = from memberRecord in memberRecords
+            var claimsDetails = new List<ClaimsDetail>();
+            claimsDetails = (from memberRecord in memberRecords
                         join claimRecord in claimRecords on memberRecord.MemberID equals claimRecord.MemberID
-                        select new {
-                            memberRecord.MemberID, 
+                        select new ClaimsDetail {
+                            MemberID = memberRecord.MemberID, 
                             Name = memberRecord.FirstName + " " + memberRecord.LastName,
-                            memberRecord.EnrollmentDate,
-                            claimRecord.ClaimDate,
-                            claimRecord.ClaimAmount
-                        };
+                            EnrollmentDate = memberRecord.EnrollmentDate,
+                            ClaimDate = claimRecord.ClaimDate,
+                            ClaimAmount = claimRecord.ClaimAmount
+                        }).OrderBy(x => x.Name).ThenByDescending(x => x.MemberID).ToList(); ;
 
-            return memberRecords;
+            return claimsDetails;
         }
     }
 }
