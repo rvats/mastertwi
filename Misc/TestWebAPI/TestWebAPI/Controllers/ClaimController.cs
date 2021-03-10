@@ -30,7 +30,7 @@ namespace TestWebAPI.Controllers
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                records = csv.GetRecords<Model>().ToList();
+                records = csv.GetRecords<Claim>().ToList();
             }
             return records;
         }
