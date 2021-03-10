@@ -8,7 +8,7 @@ namespace TestWebAPI
     /// FirstName,
     /// LastName
     /// </summary>
-    public class Model
+    public class Member
     {
         public int MemberID { get; set; }
 

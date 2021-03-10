@@ -12,30 +12,25 @@ namespace TestWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ModelController : ControllerBase
+    public class MemberController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly ILogger<MemberController> _logger;
 
-        private readonly ILogger<ModelController> _logger;
-
-        public ModelController(ILogger<ModelController> logger)
+        public MemberController(ILogger<MemberController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IEnumerable<Model> Get()
+        public IEnumerable<Member> Get()
         {
-            var records = new List<Model>();
+            var records = new List<Member>();
             var currentDirectory = Directory.GetCurrentDirectory();
-            var filePath = currentDirectory + "\\Data\\Model.csv";
+            var filePath = currentDirectory + "\\Data\\Member.csv";
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                records = csv.GetRecords<Model>().ToList();
+                records = csv.GetRecords<Member>().ToList();
             }
             return records;
         }

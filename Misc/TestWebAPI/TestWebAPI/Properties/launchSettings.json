@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "model",
+      "launchUrl": "Member",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "TestWebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "model",
+      "launchUrl": "Member",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -29,7 +29,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/model",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/Member",
       "publishAllPorts": true,
       "useSSL": true
     }
