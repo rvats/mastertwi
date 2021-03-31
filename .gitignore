@@ -76,3 +76,5 @@ ipython_config.py
 /.vs
 /ByLanguages/CSharp/.vs/Algorithms
 /ByLanguages/CSharp/RestAPIDemoConsoleApp/.vs/RestAPIDemoConsoleApp/v16
+/ByLanguages/CSharp/GalaxyClass/.vs
+*.v2
