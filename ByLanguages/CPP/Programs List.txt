@@ -1,0 +1,9 @@
+1)Program that recognises variable decalartion made from following keywords int, long, float, char, double.
+2)Program that recognises variable made up of legal combination of following keywords: signed, unsigned, const, volatile;
+3)Program that converts infix to postfix and evaluates it.
+4)Program that calculates first symbol of a given grammer.
+5)Program that calculates follow symbols of a given grammer.
+6)Program to find leading symbols of any given operator precedence grammer.
+7)Program for finding trailing symbols of a operator precedence grammer.
+8)Program to design a predictive Parser from given grammer
+9)Program which converts a 3 address code in quadruples and triples.
