@@ -1,0 +1,110 @@
+"""
+Welcome to Facebook!
+
+This is just a simple shared plaintext pad, with no execution capabilities.
+
+When you know what language you would like to use for your interview,
+simply choose it from the dropdown in the top bar.
+
+Enjoy your interview!
+
+Q1)
+
+Given a 2D matrix nXn of zeros and non-zeros
+I/P     1 2
+        3 0
+Transform this matrix such that any row/col having zero is entirely set to zero.
+O/P     1 0
+        0 0 
+"""
+
+def convertToZeroMatrix(matrix):
+    """
+        Do not return anything, modify matrix in-place instead.
+        """
+        dictrow = []
+        dictcol = []
+        
+        for row in range(len(matrix)):
+            for col in range(len(matrix[0])):
+                if matrix[row][col] == 0:
+                    dictrow.append(row)
+                    dictcol.append(col)
+                             
+        for row in dictrow:
+            matrix[row] = [0 for _ in range(len(matrix[row]))]
+        
+        for row in range(len(matrix)):
+            for col in dictcol:
+                matrix[row][col] = 0
+                
+"""
+Success
+Details 
+Runtime: 136 ms, faster than 73.97% of Python3 online submissions.
+Memory Usage: 14.2 MB, less than 5.13% of Python3 online submissions.
+# Complexity is O (Row*Column)
+"""
+
+"""                                                                  
+Q2) Add two hexadecimal strings:
+
+I/P: "1ab", "1" 
+O/P: "1ac"
+# str1 is the bigger string
+"""
+def addHexString(str1, str2):
+    hexSet = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+    
+    num1 = len(str1)
+    num2 = len(str2)
+    str1 = str1[::-1]
+    str2 = str2[::-1]
+    
+    sum = 0
+    resultatidx = 0
+    carryover = 0 
+    result = ""
+                            
+    for idx in range(num2):
+        sum = carryover+hexSet.index(str1[idx])+hexSet.index(str2[idx])
+        resultatidx = sum%16
+        if sum > 15:
+            carryover = 1
+        else: 
+            carryover = 0
+        result+=hexSet[resultatidx]
+        
+    for idx in range(num2,num1):
+        sum = carryover+hexSet.index(str1[idx])
+        resultatidx = sum%16
+        if sum > 15:
+            carryover = 1
+        else: 
+            carryover = 0
+        result+=hexSet[resultatidx]
+    if(carryover > 0 and carryover <16):
+        result+=hexSet[carryover]
+
+    return result[::-1]
+#Complexity is O(NUM1)
+
+"""
+print(addHexString("0","1")) =.> 1
+print(addHexString("1","1")) => 2
+print(addHexString("2","3")) => 5
+print(addHexString("4","5")) => 9
+print(addHexString("5","5")) => a
+print(addHexString("6","5")) => b
+print(addHexString("7","5")) => c
+print(addHexString("8","5")) => d
+print(addHexString("9","5")) => e
+print(addHexString("a","5")) => f
+print(addHexString("10","a")) => 1a
+print(addHexString("9a","6")) => a0
+print(addHexString("1ab","1")) => 1ac
+print(addHexString("1ab","5")) => 1b0
+print(addHexString("1ab12","aab")) => 1b5bd
+print(addHexString("fffffffff","f")) => 100000000e
+"""
+print(addHexString("fffffffff","f")) #=> 100000000e
